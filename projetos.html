@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('lp-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <title data-i18n="meta.projects.title">Projetos — Lucas Puton</title>
+  <meta name="description" content="Projetos e aplicações desenvolvidas por Lucas Puton com foco em código limpo e acessibilidade." data-i18n-attr="content:meta.projects.description">
+  <link rel="canonical" href="https://lucasputon.github.io/pagina-pessoal/projetos.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projetos — Lucas Puton">
+  <meta property="og:description" content="Projetos desenvolvidos por Lucas Puton.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucasputon.github.io/pagina-pessoal/projetos.html">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link" data-i18n="skip.link">Pular para o conteúdo</a>
+  <div id="a11y-announcer" class="sr-only" role="status" aria-live="polite"></div>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="header-top-row">
+        <a href="index.html" class="brand-monogram" aria-label="Lucas Puton — início" data-i18n-attr="aria-label:nav.logo.aria">
+          LP
+        </a>
+        <div class="header-actions">
+          <button type="button" class="theme-toggle" aria-label="Ativar tema escuro" data-i18n-attr="aria-label:theme.to_dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button type="button" class="lang-toggle" aria-label="Mudar para inglês" data-i18n-attr="aria-label:lang.toggle_aria">
+            EN
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-and-actions">
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="index.html" class="nav-link" data-i18n="nav.about">Sobre</a>
+          <a href="projetos.html" class="nav-link" aria-current="page" data-i18n="nav.projects">Projetos</a>
+          <a href="contato.html" class="nav-link" data-i18n="nav.contact">Contato</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="site-section">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title" data-i18n="projects.title">Projetos</h1>
+          <p class="hero-lede" style="margin-top: var(--space-3);" data-i18n="projects.lede">
+            Softwares e interfaces construídos com foco em usabilidade, acessibilidade e arquitetura limpa.
+          </p>
+        </div>
+
+        <noscript>
+          <div class="state-message">
+            <p>
+              Para carregar a lista dinâmica de projetos, habilite o JavaScript ou acesse diretamente meu repositório.
+            </p>
+            <a href="https://github.com/lucasputon" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              Ver perfil no GitHub ↗
+            </a>
+          </div>
+        </noscript>
+
+        <div id="projects-grid" class="projects-grid">
+          <!-- Renderizado via projects.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="project-card-template">
+    <article class="project-card reveal">
+      <div class="project-card-media"></div>
+      <div class="project-card-body">
+        <div class="project-card-header">
+          <h2 class="project-card-title"></h2>
+          <span class="project-card-year"></span>
+        </div>
+        <p class="project-card-summary"></p>
+        <div class="chip-group project-card-tags"></div>
+        <div class="project-card-links">
+          <a class="project-card-link repo-link" target="_blank" rel="noopener noreferrer">Repositório ↗</a>
+          <a class="project-card-link demo-link" target="_blank" rel="noopener noreferrer">Ver demo ↗</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-identity">
+          <strong>LP</strong>
+          <span data-i18n="footer.rights">&copy; 2026 Lucas Puton. Todos os direitos reservados.</span>
+        </div>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/lucasputon" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/lucasputon" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:lucasputon0805@hotmail.com" class="footer-link">E-mail</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.note">Feito com HTML, CSS e JavaScript puro.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

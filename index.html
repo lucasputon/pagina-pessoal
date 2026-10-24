@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Aplica tema imediatamente para prevenir flash */
+    (function () {
+      try {
+        var saved = localStorage.getItem('lp-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <title data-i18n="meta.index.title">Lucas Puton — Técnico em Informática &amp; Estudante de Ciência da Computação</title>
+  <meta name="description" content="Portfólio pessoal de Lucas Puton. 4 anos de experiência em suporte de TI e redes corporativas, estudante de Ciência da Computação." data-i18n-attr="content:meta.index.description">
+  <link rel="canonical" href="https://lucasputon.github.io/pagina-pessoal/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lucas Puton — Portfólio Pessoal">
+  <meta property="og:description" content="Técnico em Informática com 4 anos de experiência e estudante de Ciência da Computação.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucasputon.github.io/pagina-pessoal/">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Estilos Globais sem Build -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <!-- Acessibilidade: Skip Link -->
+  <a href="#conteudo" class="skip-link" data-i18n="skip.link">Pular para o conteúdo</a>
+
+  <!-- Região para anúncios de leitor de tela -->
+  <div id="a11y-announcer" class="sr-only" role="status" aria-live="polite"></div>
+
+  <!-- Cabeçalho Global -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="header-top-row">
+        <a href="index.html" class="brand-monogram" aria-label="Lucas Puton — início" data-i18n-attr="aria-label:nav.logo.aria">
+          LP
+        </a>
+        <div class="header-actions">
+          <button type="button" class="theme-toggle" aria-label="Ativar tema escuro" data-i18n-attr="aria-label:theme.to_dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button type="button" class="lang-toggle" aria-label="Mudar para inglês" data-i18n-attr="aria-label:lang.toggle_aria">
+            EN
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-and-actions">
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="index.html" class="nav-link" aria-current="page" data-i18n="nav.about">Sobre</a>
+          <a href="projetos.html" class="nav-link" data-i18n="nav.projects">Projetos</a>
+          <a href="contato.html" class="nav-link" data-i18n="nav.contact">Contato</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="conteudo">
+    <!-- Hero Section -->
+    <section class="site-section hero-section" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="hero-eyebrow" data-i18n="home.hero.eyebrow">Técnico em Informática · Ciências da Computação</span>
+          <h1 id="hero-title" class="hero-title" data-i18n="home.hero.title">Lucas Puton</h1>
+          <p class="hero-lede" data-i18n="home.hero.lede">
+            Quatro anos em suporte de TI e redes corporativas. Estudando Ciência da Computação e construindo para a web.
+          </p>
+          <div class="hero-actions">
+            <a href="projetos.html" class="btn btn-primary" data-i18n="home.hero.cta.projects">Ver projetos</a>
+            <a href="#" id="btn-cv" class="btn btn-secondary" hidden data-i18n="home.hero.cta.cv">Baixar CV</a>
+          </div>
+          <p class="hero-meta" data-i18n="home.hero.meta">
+            Carazinho, RS · Suporte de TI · HTML, CSS &amp; JavaScript
+          </p>
+        </div>
+
+        <div class="hero-media-wrapper reveal">
+          <div class="profile-photo-wrapper">
+            <!-- Fallback autoral com monograma caso foto ainda não esteja presente -->
+            <div class="avatar-placeholder" aria-label="Monograma Lucas Puton">
+              LP
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="site-section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="about-heading" class="section-title" data-i18n="home.about.title">Sobre</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p data-i18n="home.about.p1">
+              Sou Técnico em Informática formado pelo Senac RS e estudante de Bacharelado em Ciência da Computação na Atitus Educação. Com mais de 4 anos de experiência contínua atuando como Assistente de TI em ambiente corporativo, possuo sólida vivência em resolução rápida de problemas operacionais, manutenção de computadores, atendimento a usuários e rotinas de rede.
+            </p>
+            <p data-i18n="home.about.p2">
+              Meu objetivo é seguir evoluindo na intersecção entre infraestrutura de tecnologia, ciência da computação e desenvolvimento web moderno, aplicando boas práticas de engenharia para otimizar processos internos e entregar soluções estáveis.
+            </p>
+          </div>
+
+          <aside class="stack-column reveal" aria-labelledby="stack-title">
+            <h3 id="stack-title" class="stack-category-title" data-i18n="home.about.stack_title">Stack Principal</h3>
+            
+            <div class="stack-group">
+              <span class="timeline-meta" data-i18n="home.about.stack_frontend">Frontend</span>
+              <div class="chip-group">
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <span class="timeline-meta" data-i18n="home.about.stack_infra">Infraestrutura &amp; Suporte</span>
+              <div class="chip-group">
+                <span class="chip">Redes Corporativas</span>
+                <span class="chip">Suporte de TI</span>
+                <span class="chip">Segurança da Informação</span>
+                <span class="chip">Hardware &amp; Manutenção</span>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <span class="timeline-meta" data-i18n="home.about.stack_tools">Ferramentas &amp; IA</span>
+              <div class="chip-group">
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Excel</span>
+                <span class="chip">Gemini AI</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Trajetória -->
+    <section class="site-section" aria-labelledby="journey-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="journey-heading" class="section-title" data-i18n="home.journey.title">Trajetória</h2>
+        </div>
+
+        <div class="journey-grid">
+          <!-- Coluna Experiência -->
+          <div class="reveal">
+            <h3 class="journey-column-title" data-i18n="home.journey.exp_title">Experiência</h3>
+            <ol class="timeline">
+              <li class="timeline-item">
+                <span class="timeline-role">Assistente de TI</span>
+                <span class="timeline-org">Addizionare Contabilidade</span>
+                <span class="timeline-meta">ago 2022 — atual (4 anos 3 meses) · Carazinho, RS</span>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-role">Técnico de Suporte de Informática</span>
+                <span class="timeline-org">Connectos</span>
+                <span class="timeline-meta">jun 2022 — jul 2022 · Carazinho, RS</span>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-role">Técnico de TI</span>
+                <span class="timeline-org">Tecnomix Informática</span>
+                <span class="timeline-meta">abr 2021 — jun 2021 · Rio Grande do Sul</span>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Coluna Formação -->
+          <div class="reveal">
+            <h3 class="journey-column-title" data-i18n="home.journey.edu_title">Formação</h3>
+            <ol class="timeline">
+              <li class="timeline-item">
+                <span class="timeline-role">Bacharelado em Ciência da Computação</span>
+                <span class="timeline-org">Atitus Educação</span>
+                <span class="timeline-meta">em andamento · conclusão prevista: ago/2026</span>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-role">Técnico em Informática</span>
+                <span class="timeline-org">Senac RS</span>
+                <span class="timeline-meta">2019 — 2021 · Concluído</span>
+              </li>
+            </ol>
+
+            <div class="certifications-block">
+              <h4 class="certifications-title" data-i18n="home.journey.cert_title">Certificações &amp; Idiomas</h4>
+              <p class="certifications-list">
+                Formação Excel · English Course · PoliSummit 2026 · Informática Fundamental Compacto · Capacita+: Construa com o Gemini
+              </p>
+              <p class="certifications-list" data-i18n="home.journey.languages">
+                Português nativo · Inglês profissional
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos em Destaque -->
+    <section class="site-section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header featured-header">
+          <h2 id="featured-heading" class="section-title" data-i18n="home.featured.title">Projetos em destaque</h2>
+          <a href="projetos.html" class="featured-link" data-i18n="home.featured.all">Ver todos &rarr;</a>
+        </div>
+
+        <div id="featured-projects-container" class="projects-grid">
+          <!-- Renderizado dinamicamente via projects.js -->
+        </div>
+      </div>
+    </section>
+
+    <template id="project-card-template">
+      <article class="project-card reveal">
+        <div class="project-card-media"></div>
+        <div class="project-card-body">
+          <div class="project-card-header">
+            <h3 class="project-card-title"></h3>
+            <span class="project-card-year"></span>
+          </div>
+          <p class="project-card-summary"></p>
+          <div class="chip-group project-card-tags"></div>
+          <div class="project-card-links">
+            <a class="project-card-link repo-link" target="_blank" rel="noopener noreferrer">Repositório ↗</a>
+            <a class="project-card-link demo-link" target="_blank" rel="noopener noreferrer">Ver demo ↗</a>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <!-- CTA de Contato -->
+    <section class="site-section" aria-labelledby="contact-cta-heading">
+      <div class="container contact-cta reveal">
+        <h2 id="contact-cta-heading" class="section-title" data-i18n="home.contact.title">Vamos conversar</h2>
+        <p data-i18n="home.contact.lede">
+          Aberto a conversas sobre TI, infraestrutura e desenvolvimento.
+        </p>
+        <a href="mailto:lucasputon0805@hotmail.com" class="contact-email-link">
+          lucasputon0805@hotmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Global -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-identity">
+          <strong>LP</strong>
+          <span data-i18n="footer.rights">&copy; 2026 Lucas Puton. Todos os direitos reservados.</span>
+        </div>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/lucasputon" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/lucasputon" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:lucasputon0805@hotmail.com" class="footer-link">E-mail</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.note">Feito com HTML, CSS e JavaScript puro.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

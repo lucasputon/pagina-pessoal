@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('lp-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <title data-i18n="meta.contact.title">Contato — Lucas Puton</title>
+  <meta name="description" content="Entre em contato com Lucas Puton para oportunidades profissionais em TI, suporte e desenvolvimento web." data-i18n-attr="content:meta.contact.description">
+  <link rel="canonical" href="https://lucasputon.github.io/pagina-pessoal/contato.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contato — Lucas Puton">
+  <meta property="og:description" content="Canais de contato direto com Lucas Puton.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucasputon.github.io/pagina-pessoal/contato.html">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link" data-i18n="skip.link">Pular para o conteúdo</a>
+  <div id="a11y-announcer" class="sr-only" role="status" aria-live="polite"></div>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="header-top-row">
+        <a href="index.html" class="brand-monogram" aria-label="Lucas Puton — início" data-i18n-attr="aria-label:nav.logo.aria">
+          LP
+        </a>
+        <div class="header-actions">
+          <button type="button" class="theme-toggle" aria-label="Ativar tema escuro" data-i18n-attr="aria-label:theme.to_dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button type="button" class="lang-toggle" aria-label="Mudar para inglês" data-i18n-attr="aria-label:lang.toggle_aria">
+            EN
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-and-actions">
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="index.html" class="nav-link" data-i18n="nav.about">Sobre</a>
+          <a href="projetos.html" class="nav-link" data-i18n="nav.projects">Projetos</a>
+          <a href="contato.html" class="nav-link" aria-current="page" data-i18n="nav.contact">Contato</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="site-section">
+      <div class="container">
+        <div class="contact-page-layout">
+          <div class="contact-hero reveal">
+            <h1 class="section-title" data-i18n="contact.title">Contato</h1>
+            <p class="hero-lede" data-i18n="contact.lede">
+              Tem uma oportunidade, um projeto para conversar ou quer trocar uma ideia sobre tecnologia? Fique à vontade para entrar em contato.
+            </p>
+            <div style="margin-top: var(--space-4);">
+              <span class="timeline-meta" data-i18n="contact.email.label">E-mail Direto</span>
+              <br>
+              <a href="mailto:lucasputon0805@hotmail.com" class="contact-email-link">
+                lucasputon0805@hotmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="journey-column-title" data-i18n="contact.channels.title">Canais Profissionais</h2>
+            <ul class="channels-list">
+              <li>
+                <a href="https://www.linkedin.com/in/lucasputon" class="channel-item" target="_blank" rel="noopener noreferrer">
+                  <span class="channel-label">LinkedIn</span>
+                  <span class="channel-value">linkedin.com/in/lucasputon ↗</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/lucasputon" class="channel-item" target="_blank" rel="noopener noreferrer">
+                  <span class="channel-label">GitHub</span>
+                  <span class="channel-value">github.com/lucasputon ↗</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:lucasputon0805@hotmail.com" class="channel-item">
+                  <span class="channel-label">E-mail</span>
+                  <span class="channel-value">lucasputon0805@hotmail.com ↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="seeking-block reveal">
+            <h2 class="seeking-title" data-i18n="contact.seeking.title">O que estou buscando</h2>
+            <p class="seeking-body" data-i18n="contact.seeking.body">
+              Oportunidades de estágio ou posições júnior em Suporte de TI, Infraestrutura de Redes ou Desenvolvimento Frontend. Aberto a vagas locais em Carazinho/RS ou oportunidades remotas.
+            </p>
+            <p class="response-note" data-i18n="contact.response">
+              Respondo em até 2 dias úteis.
+            </p>
+          </div>
+
+          <div class="reveal" style="margin-top: var(--space-2);">
+            <a href="projetos.html" class="featured-link" data-i18n="contact.projects_prompt">
+              Prefere ver meu trabalho primeiro? &rarr; Ver Projetos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-identity">
+          <strong>LP</strong>
+          <span data-i18n="footer.rights">&copy; 2026 Lucas Puton. Todos os direitos reservados.</span>
+        </div>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/lucasputon" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/lucasputon" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:lucasputon0805@hotmail.com" class="footer-link">E-mail</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.note">Feito com HTML, CSS e JavaScript puro.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

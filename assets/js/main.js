@@ -47,10 +47,8 @@ function init() {
   initCvButton();
   initPageProjects();
 
-  document.querySelectorAll('.lang-toggle').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      setTimeout(initPageProjects, 60);
-    });
+  window.addEventListener('languagechange', () => {
+    initPageProjects();
   });
 }
 

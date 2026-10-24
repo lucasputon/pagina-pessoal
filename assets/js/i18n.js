@@ -7,6 +7,7 @@ const STORAGE_KEY = 'lp-lang';
 let currentLang = 'pt';
 let enDictionary = null;
 const originalPtValues = new Map();
+const originalPtAttributes = new Map();
 
 export function getCurrentLanguage() {
   return currentLang;
@@ -20,7 +21,7 @@ export async function fetchDictionary() {
     enDictionary = await res.json();
     return enDictionary;
   } catch (err) {
-    console.error('Falha ao carregar i18n/en.json:', err);
+    console.error('[i18n] Falha ao carregar i18n/en.json:', err);
     return {};
   }
 }
@@ -38,7 +39,7 @@ export async function setLanguage(lang) {
   try {
     localStorage.setItem(STORAGE_KEY, currentLang);
   } catch (err) {
-    console.warn('Não foi possível persistir idioma no localStorage:', err);
+    console.warn('[i18n] Não foi possível salvar idioma no localStorage:', err);
   }
 
   document.documentElement.setAttribute('lang', currentLang === 'en' ? 'en' : 'pt-BR');
@@ -50,6 +51,8 @@ export async function setLanguage(lang) {
   applyTranslations();
   updateLangButtons();
   announceLanguageChange();
+
+  window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang: currentLang } }));
 }
 
 function applyTranslations() {
@@ -78,10 +81,13 @@ function applyTranslations() {
       const parts = def.trim().split(':');
       if (parts.length !== 2) return;
       const [attr, key] = parts;
-      const storeKey = `${attr}::${key}`;
 
-      if (!el.dataset[storeKey]) {
-        el.dataset[storeKey] = el.getAttribute(attr) || '';
+      if (!originalPtAttributes.has(el)) {
+        originalPtAttributes.set(el, new Map());
+      }
+      const elMap = originalPtAttributes.get(el);
+      if (!elMap.has(attr)) {
+        elMap.set(attr, el.getAttribute(attr) || '');
       }
 
       if (currentLang === 'en') {
@@ -91,20 +97,23 @@ function applyTranslations() {
           console.warn(`[i18n] Atributo ausente em en.json: "${key}"`);
         }
       } else {
-        el.setAttribute(attr, el.dataset[storeKey]);
+        el.setAttribute(attr, elMap.get(attr));
       }
     });
   });
 
-  // Atualiza <title> e <meta name="description">
+  // Atualiza <title>
   const pageTitleKey = document.querySelector('title')?.getAttribute('data-i18n');
-  if (pageTitleKey && currentLang === 'en' && enDictionary?.[pageTitleKey]) {
-    document.title = enDictionary[pageTitleKey];
-  } else if (pageTitleKey && currentLang === 'pt') {
-    const origTitle = document.querySelector('title')?.dataset.origTitle;
-    if (origTitle) document.title = origTitle;
+  if (pageTitleKey) {
+    if (currentLang === 'en' && enDictionary?.[pageTitleKey]) {
+      document.title = enDictionary[pageTitleKey];
+    } else {
+      const origTitle = document.querySelector('title')?.dataset.origTitle;
+      if (origTitle) document.title = origTitle;
+    }
   }
 
+  // Atualiza <meta name="description">
   const metaDesc = document.querySelector('meta[name="description"]');
   const metaDescKey = metaDesc?.getAttribute('data-i18n-attr')?.split(':')[1];
   if (metaDescKey && currentLang === 'en' && enDictionary?.[metaDescKey]) {
@@ -134,20 +143,26 @@ function announceLanguageChange() {
   }
 }
 
-export function toggleLanguage() {
+export async function toggleLanguage() {
   const next = currentLang === 'pt' ? 'en' : 'pt';
-  setLanguage(next);
+  await setLanguage(next);
   return next;
 }
 
 export async function initI18n() {
-  // Salva título original
   const titleEl = document.querySelector('title');
   if (titleEl && !titleEl.dataset.origTitle) {
     titleEl.dataset.origTitle = document.title;
   }
 
-  // Detecta idioma: URL param > localStorage > padrão "pt"
+  // Anexa ouvintes de clique imediatamente
+  document.querySelectorAll('.lang-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      toggleLanguage();
+    });
+  });
+
+  // Detecta idioma inicial: URL param > localStorage > padrão "pt"
   const urlParams = new URLSearchParams(window.location.search);
   const urlLang = urlParams.get('lang');
   const saved = localStorage.getItem(STORAGE_KEY);
@@ -160,10 +175,4 @@ export async function initI18n() {
   }
 
   await setLanguage(initial);
-
-  document.querySelectorAll('.lang-toggle').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      toggleLanguage();
-    });
-  });
 }

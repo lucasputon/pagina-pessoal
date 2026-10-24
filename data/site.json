@@ -1,0 +1,36 @@
+{
+  "name": "Lucas Puton",
+  "handle": "lucasputon",
+  "role": {
+    "pt": "Técnico em Informática · Cursando Ciência da Computação",
+    "en": "IT Technician · Computer Science Student"
+  },
+  "location": {
+    "pt": "Carazinho, Rio Grande do Sul, Brasil",
+    "en": "Carazinho, Rio Grande do Sul, Brazil"
+  },
+  "availability": {
+    "pt": "Aberto a oportunidades em TI e Desenvolvimento",
+    "en": "Open to opportunities in IT and Development"
+  },
+  "email": "lucasputon0805@hotmail.com",
+  "links": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/lucasputon"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/lucasputon"
+    }
+  ],
+  "photo": "assets/img/profile.jpg",
+  "cv": "assets/cv/lucas-puton-cv.pdf",
+  "stack": {
+    "frontend": ["HTML", "CSS", "JavaScript"],
+    "infrastructure": ["Redes Corporativas", "Suporte de TI", "Segurança da Informação", "Hardware"],
+    "tools": ["Git", "GitHub", "Excel", "Gemini AI"]
+  }
+}

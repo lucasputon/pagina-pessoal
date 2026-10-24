@@ -1,0 +1,10 @@
+# Insumos internos e arquivos confidenciais
+Profile.pdf
+*.log
+.DS_Store
+Thumbs.db
+
+# Pastas de IDE e editores
+.vscode/
+.idea/
+.gemini/

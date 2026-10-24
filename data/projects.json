@@ -1,0 +1,21 @@
+[
+  {
+    "slug": "pagina-pessoal",
+    "title": {
+      "pt": "Portfólio Pessoal Minimalista",
+      "en": "Minimalist Personal Portfolio"
+    },
+    "summary": {
+      "pt": "Site pessoal estático, bilíngue (PT/EN) e com tema claro/escuro. Construído com HTML, CSS e JS puro, sem dependências externas.",
+      "en": "Static, bilingual (PT/EN) personal website with light/dark theme. Built with pure HTML, CSS, and JS, zero external dependencies."
+    },
+    "year": 2026,
+    "status": "concluido",
+    "tags": ["HTML", "CSS", "JavaScript", "Acessibilidade"],
+    "repo": "https://github.com/lucasputon/pagina-pessoal",
+    "demo": "https://lucasputon.github.io/pagina-pessoal/",
+    "image": null,
+    "featured": true,
+    "order": 1
+  }
+]

@@ -239,17 +239,23 @@
   color: var(--accent);
 }
 
-/* Animação Reveal */
+/* Animação Reveal: visível por padrão para progressive enhancement */
 .reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  will-change: opacity, transform;
+  opacity: 1;
 }
 
-.reveal.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+@media (prefers-reduced-motion: no-preference) {
+  html.js-reveal-active .reveal:not(.is-revealed) {
+    opacity: 0;
+    transform: translateY(12px);
+    will-change: opacity, transform;
+  }
+
+  html.js-reveal-active .reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+  }
 }
 
 /* Mensagens de Estado (Vazio / Erro) */

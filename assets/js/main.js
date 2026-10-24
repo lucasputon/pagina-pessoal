@@ -15,10 +15,8 @@ async function initCvButton() {
     const res = await fetch('data/site.json');
     if (!res.ok) return;
     const siteData = await res.json();
-
     if (!siteData.cv) return;
 
-    // Checagem segura via requisição HEAD para verificar existência do arquivo
     const cvCheck = await fetch(siteData.cv, { method: 'HEAD' });
     if (cvCheck.ok) {
       btnCv.href = siteData.cv;
@@ -26,45 +24,38 @@ async function initCvButton() {
       btnCv.removeAttribute('hidden');
     }
   } catch (err) {
-    console.info('[cv] Botão de CV mantido oculto (PDF não encontrado ou erro de rede).');
+    // Mantém botão oculto silenciosamente caso o arquivo não exista
   }
 }
 
 async function initPageProjects() {
-  const featuredContainer = document.getElementById('featured-projects-container');
-  if (featuredContainer) {
+  const featured = document.getElementById('featured-projects-container');
+  if (featured) {
     await loadAndRenderProjects('featured-projects-container', true);
   }
 
-  const gridContainer = document.getElementById('projects-grid');
-  if (gridContainer) {
+  const grid = document.getElementById('projects-grid');
+  if (grid) {
     await loadAndRenderProjects('projects-grid', false);
   }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  // Inicialização do tema (já pré-carregado no head para evitar flash)
+function init() {
   initTheme();
-
-  // Inicialização de i18n
-  await initI18n();
-
-  // Verificação condicional do CV
-  await initCvButton();
-
-  // Renderização de projetos se houver containers nesta página
-  await initPageProjects();
-
-  // Animação de reveal
+  initI18n();
   initReveal();
+  initCvButton();
+  initPageProjects();
 
-  // Re-renderiza projetos ao alternar idioma
   document.querySelectorAll('.lang-toggle').forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      // Breve pausa para aguardar conclusão da troca de idioma
-      setTimeout(() => {
-        initPageProjects();
-      }, 50);
+    btn.addEventListener('click', () => {
+      setTimeout(initPageProjects, 60);
     });
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

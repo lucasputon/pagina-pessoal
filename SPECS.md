@@ -90,7 +90,7 @@ Dados extraídos do currículo em PDF na raiz do repositório. **São a fonte da
 
 | Instituição | Curso | Situação |
 | --- | --- | --- |
-| Atitus Educação | Bacharelado em Ciências da Computação | em andamento (PDF indica ago/2026 — confirmar se é início ou conclusão) |
+| Atitus Educação | Bacharelado em Ciências da Computação | em andamento (iniciado em ago/2026, graduação em 8 semestres) |
 | Senac RS | Técnico em Informática | concluído (2019–2021) |
 
 **Competências e certificações**
@@ -191,7 +191,7 @@ Ordem das seções:
   - `Connectos` — Técnico de Suporte de Informática — `jun 2022 — jul 2022` — Carazinho, RS
   - `Tecnomix Informática` — Técnico de TI — `abr 2021 — jun 2021` — Rio Grande do Sul
 - Formação:
-  - `Atitus Educação` — Bacharelado em Ciências da Computação — `em andamento`
+  - `Atitus Educação` — Bacharelado em Ciências da Computação — `ago 2026 — atual · em andamento`
   - `Senac RS` — Técnico em Informática — `2019 — 2021`
 - Abaixo, em 13px muted: certificações separadas por `·` e idiomas (`Português nativo · Inglês profissional`).
 - Sem logos de empresa, sem descrição longa por cargo, sem barra de progresso.

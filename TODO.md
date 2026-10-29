@@ -26,7 +26,7 @@ Todos os dados textuais do portfólio devem ser estritamente baseados nas seguin
   2. **Connectos** — *Técnico de Suporte de Informática* (junho de 2022 – julho de 2022) — Carazinho, RS.
   3. **Tecnomix Informática** — *Técnico de TI* (abril de 2021 – junho de 2021) — Rio Grande do Sul.
 - **Formação Acadêmica:**
-  1. **Atitus Educação** — *Bacharelado em Ciência da Computação* (Conclusão prevista: agosto de 2026).
+  1. **Atitus Educação** — *Bacharelado em Ciência da Computação* (Iniciado em agosto de 2026 · em andamento).
   2. **Senac RS** — *Técnico em Informática* (2019 – 2021).
 - **Competências:** Suporte de TI, Redes corporativas, Segurança da informação, Montagem e manutenção de hardware, Resolução de problemas.
 - **Certificações:**
